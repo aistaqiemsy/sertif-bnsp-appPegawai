@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Pegawai</title>
     <link rel="stylesheet" href="../../asset/bootstrap.css">
 </head>
+
 <body>
+<!-- kode JS untuk validasi atau konfirmasi -->
+<script src="../../javascript/js.js"></script>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -43,7 +48,7 @@
         </a>
         </li>
         <li class="nav-item">
-          <a href="/">
+          <a href="/" id="logout-button">
             <button type="button" class="btn btn-outline-danger">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
@@ -52,22 +57,15 @@
               Keluar
             </button>
           </a>
+          <form action="/logout" id="logout-form" method="get">
+            @csrf
+          </form>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
-<div class="card">
-  <div class="card-header">
-    Selamat Datang!
-  </div>
-  <div class="card-body">
-    <p class="card-text"><i>Di halaman ini anda bisa melakukan pengolahan data pegawai SMK Wikrama 1 Garut</i></p>
-  </div>
-</div>
 <br>
-
 <center>
 <h5 class="card-title">DAFTAR PEGAWAI SMK WIKRAMA 1 GARUT</h5><br>
 </center>

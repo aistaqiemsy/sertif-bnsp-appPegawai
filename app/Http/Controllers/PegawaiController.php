@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class PegawaiController extends Controller
 {
+    public function berandaAdmin() {
+        return view('pegawai.landingAdmin');
+    }
     public function formTambahPegawai() {
         return view('pegawai.formTambahPegawai');
     }

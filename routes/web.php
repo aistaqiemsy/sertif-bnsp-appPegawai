@@ -13,9 +13,7 @@ Route::get('/tentang', function () {
 });
 
 // route untuk CRUD pegawai
-Route::get('/pegawai/beranda', function () {
-    return view('pegawai.landingAdmin');
-});
+Route::get('/pegawai/beranda', [PegawaiController::class, 'berandaAdmin']);
 
 //halaman input pegawai baru
 Route::get('/pegawai/formTambahPegawai', [PegawaiController::class, 'formTambahPegawai']);
@@ -34,3 +32,8 @@ Route::get('/pegawai/profilPegawai/{idPegawai}', [PegawaiController::class, 'pro
 
 //route autentikasi ( tanpda db )
 Route::get('/autentikasi', [LoginController::class, 'authPengguna']);
+
+//logut
+Route::get('/logout', function() {
+    return view('landing');
+});

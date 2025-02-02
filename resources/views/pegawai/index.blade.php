@@ -21,15 +21,6 @@
           </a>
         </li>
          Manajemen Pegawai SMK Wikrama 1 Garut 
-        <!-- <li class="nav-item">
-          <a href="/pegawai/dataPegawai"><span class="badge text-bg-primary">Data Pegawai</span></a>
-        </li>
-        <li class="nav-item">
-          <a href="/tentang"><span class="badge text-bg-primary">Tentang</span></a>
-        </li>
-        <li class="nav-item">
-          <a href="/"><span class="badge text-bg-light">Keluar</span></a>
-        </li> -->
       </ul>
       <a href="/tentang"><span class="badge text-bg-primary">Tentang</span></a>
       <a href="/"><span class="badge text-bg-light">Keluar</span></a>

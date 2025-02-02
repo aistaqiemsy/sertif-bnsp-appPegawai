@@ -16,6 +16,11 @@ Route::get('/pegawai/beranda', function () {
     return view('pegawai.index');
 });
 
+//halaman input pegawai baru
+Route::get('/pegawai/formTambahPegawai', [PegawaiController::class, 'formTambahPegawai']);
+
+Route::post('/pegawai/tambahPegawai', [PegawaiController::class, 'tambahPegawai']);
+
 Route::get('/pegawai/dataPegawai',[PegawaiController::class, 'ambilDataPegawai']);
 
 Route::get('/pegawai/index/{namaPegawai?}', function($namaPegawai = "") {

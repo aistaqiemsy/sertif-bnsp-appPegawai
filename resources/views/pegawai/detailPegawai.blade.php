@@ -13,9 +13,51 @@
     <h5 class="card-title">PROFIL PEGAWAI</h5>
   </div>
   <div class="card-body">
-
   <div class="container-sm">
-    <ul class="list-group">
+  <table>
+        <tr align="left">
+            <td width="150">Nama</td>
+            <td>:</td>
+            <td>{{ $namaPegawai }}</td>
+        </tr>
+        <tr align="left">
+            <td>Jabatan</td>
+            <td>:</td>
+            <td>{{ $jabatanPegawai }}</td>
+        </tr>
+        <tr align="left">
+            <td>NIP</td>
+            <td>:</td>
+            <td>{{ $nipPegawai }}</td>
+        </tr>
+        <tr align="left">
+            <td>Alamat</td>
+            <td>:</td>
+            <td>{{ $alamatPegawai }}</td>
+        </tr>
+        <tr align="left">
+            <td>HP</td>
+            <td>:</td>
+            <td>{{ $hpPegawai }}</td>
+        </tr>
+        <tr align="left">
+            <td>Gaji</td>
+            <td>:</td>
+            <td>Rp. {{ number_format($gajiPegawai) }}</td>
+        </tr>
+    </table>
+    <!-- <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-start"></div>
+            <div class="container text-center">
+                <div class="row row-cols-4">
+                    <div class="col">Nama</div>
+                    <div class="col">:</div>
+                    <div class="col-6"> {{ $namaPegawai }}</div>
+                </div>
+            </div>
+        </li>    
+    
         <li class="list-group-item d-flex justify-content-between align-items-center">
             <div class="container text-center">
                 <div class="row row-cols-4">
@@ -70,7 +112,7 @@
                 </div>
             </div>
         </li>
-    </ul>
+    </ul> -->
   </div>
 <br>
     <a href="/pegawai/formPerbarui/{{$idPegawai}}">

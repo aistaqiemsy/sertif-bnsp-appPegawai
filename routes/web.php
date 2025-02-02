@@ -14,7 +14,7 @@ Route::get('/tentang', function () {
 
 // route untuk CRUD pegawai
 Route::get('/pegawai/beranda', function () {
-    return view('pegawai.index');
+    return view('pegawai.landingAdmin');
 });
 
 //halaman input pegawai baru
@@ -24,11 +24,7 @@ Route::post('/pegawai/tambahPegawai', [PegawaiController::class, 'tambahPegawai'
 
 Route::get('/pegawai/dataPegawai',[PegawaiController::class, 'ambilDataPegawai']);
 
-Route::get('/pegawai/index/{namaPegawai?}', function($namaPegawai = "") {
-    return view('pegawai.index')->with([
-        'namaPegawai' => $namaPegawai
-    ]);
-});
+Route::get('/pegawai/index', [PegawaiController::class, 'halamanLogin']);
 
 //route pembaruan data
 Route::get('/pegawai/formPerbarui/{idPegawai}',[PegawaiController::class, 'formPerbaruiPegawai']);

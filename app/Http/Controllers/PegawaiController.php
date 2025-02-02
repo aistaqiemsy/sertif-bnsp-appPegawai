@@ -72,4 +72,9 @@ class PegawaiController extends Controller
             'gajiPegawai' => $pegawai->gaji
         ]);
     }
+
+    // method untuk autentikasi
+    public function halamanLogin() {
+        return view('auth.index');
+    }
 }

@@ -12,10 +12,7 @@ class LoginController extends Controller
         $sandi = $request->sandi;
 
         if ($namaPengguna == 'admin' and $sandi == 123 ) {
-            $dataPegawai = DB::table('data_pegawais')->get();
-            return view('pegawai.dataPegawai', [
-                'dataPegawai' => $dataPegawai
-            ]);
+            return view('pegawai.landingAdmin');
         } else {
             return redirect()->back()->withErrors(['Autentikasi gagal! Masukan kredensi dengan benar...']);
         }

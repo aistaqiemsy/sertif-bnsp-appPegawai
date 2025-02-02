@@ -28,4 +28,35 @@ class PegawaiController extends Controller
 
         return redirect('/pegawai/dataPegawai');
     }
+
+    public function formPerbaruiPegawai($idPegawai) {
+        $pegawai = DB::table('data_pegawais')->find($idPegawai);
+        // $pegawai = DataPegawai::find($idPegawai);
+        // return "$pegawai->nama";
+        return view('pegawai.formPerbarui')->with([
+            'idPegawai' => $pegawai->id,
+            'namaPegawai' => $pegawai->nama,
+            'jabatanPegawai' => $pegawai->jabatan,
+            'nipPegawai' => $pegawai->nip
+        ]);
+    }
+
+    public function simpanPembaruan($idPegawai, Request $request) {
+        
+        // $pembaruanPegawai = DB::table('data_pegawais')->find($idPegawai);
+        // $pembaruanPegawai->nama = $request->namaPegawai;
+        // $pembaruanPegawai->jabatan = $request->jabatanPegawai;
+        // $pembaruanPegawai->nip = $request->nipPegawai;
+
+        // $pegawai = DB::table('data_pegawais')->where('id', $idPegawai)->get();
+
+        DB::table('data_pegawais')->where('id', $idPegawai)->update([
+            'nama' => $request->namaPegawai,
+            'jabatan' => $request->jabatanPegawai,
+            'nip' => $request->nipPegawai
+        ]);
+
+        // return "{{ $idPegawai, $request->nama}}";
+        return redirect('/pegawai/dataPegawai');
+    }
 }

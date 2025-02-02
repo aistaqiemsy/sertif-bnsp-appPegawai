@@ -28,3 +28,8 @@ Route::get('/pegawai/index/{namaPegawai?}', function($namaPegawai = "") {
         'namaPegawai' => $namaPegawai
     ]);
 });
+
+//route pembaruan data
+Route::get('/pegawai/formPerbarui/{idPegawai}',[PegawaiController::class, 'formPerbaruiPegawai']);
+Route::post('/pegawai/simpanPembaruan/{idPegawai}', [PegawaiController::class, 'simpanPembaruan']);
+

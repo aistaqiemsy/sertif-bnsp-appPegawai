@@ -32,4 +32,4 @@ Route::get('/pegawai/index/{namaPegawai?}', function($namaPegawai = "") {
 //route pembaruan data
 Route::get('/pegawai/formPerbarui/{idPegawai}',[PegawaiController::class, 'formPerbaruiPegawai']);
 Route::post('/pegawai/simpanPembaruan/{idPegawai}', [PegawaiController::class, 'simpanPembaruan']);
-
+Route::get('/pegawai/hapusPegawai/{idPegawai}', [PegawaiController::class, 'hapusPegawai']);

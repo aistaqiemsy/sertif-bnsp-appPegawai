@@ -33,3 +33,4 @@ Route::get('/pegawai/index/{namaPegawai?}', function($namaPegawai = "") {
 Route::get('/pegawai/formPerbarui/{idPegawai}',[PegawaiController::class, 'formPerbaruiPegawai']);
 Route::post('/pegawai/simpanPembaruan/{idPegawai}', [PegawaiController::class, 'simpanPembaruan']);
 Route::get('/pegawai/hapusPegawai/{idPegawai}', [PegawaiController::class, 'hapusPegawai']);
+Route::get('/pegawai/profilPegawai/{idPegawai}', [PegawaiController::class, 'profilPegawai']);

@@ -53,6 +53,18 @@
                         <label for="exampleFormControlInput1" class="form-label">NIP</label>
                         <input type="number" id="nipPegawai" name="nipPegawai" class="form-control" id="exampleFormControlInput1" placeholder="{{ $nipPegawai }}" value="{{ $nipPegawai }}">
                     </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Alamat</label>
+                        <input type="text" id="alamatPegawai" name="alamatPegawai" class="form-control" id="exampleFormControlInput1" placeholder="{{ $alamatPegawai }}" value="{{ $alamatPegawai }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Nomor HP</label>
+                        <input type="number" id="hpPegawai" name="hpPegawai" class="form-control" id="exampleFormControlInput1" placeholder="{{ $hpPegawai }}" value="{{ $hpPegawai }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Gaji</label>
+                        <input type="number" id="gajiPegawai" name="gajiPegawai" class="form-control" id="exampleFormControlInput1" placeholder="{{ $gajiPegawai }}" value="{{ $gajiPegawai }}">
+                    </div>
                 </div>
 
                 <div class="container-sm">

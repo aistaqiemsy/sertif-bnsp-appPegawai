@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('nama');
             $table->string('jabatan');
             $table->integer('nip');
+            $table->string('alamat');
+            $table->string('hp');
+            $table->string('gaji');
             $table->timestamps();
         });
     }

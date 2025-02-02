@@ -31,13 +31,14 @@ class PegawaiController extends Controller
 
     public function formPerbaruiPegawai($idPegawai) {
         $pegawai = DB::table('data_pegawais')->find($idPegawai);
-        // $pegawai = DataPegawai::find($idPegawai);
-        // return "$pegawai->nama";
         return view('pegawai.formPerbarui')->with([
             'idPegawai' => $pegawai->id,
             'namaPegawai' => $pegawai->nama,
             'jabatanPegawai' => $pegawai->jabatan,
-            'nipPegawai' => $pegawai->nip
+            'nipPegawai' => $pegawai->nip,
+            'alamatPegawai' => $pegawai->alamat,
+            'hpPegawai' => $pegawai->hp,
+            'gajiPegawai' => $pegawai->gaji
         ]);
     }
 
@@ -45,7 +46,10 @@ class PegawaiController extends Controller
         DB::table('data_pegawais')->where('id', $idPegawai)->update([
             'nama' => $request->namaPegawai,
             'jabatan' => $request->jabatanPegawai,
-            'nip' => $request->nipPegawai
+            'nip' => $request->nipPegawai,
+            'alamat'  => $request->alamatPegawai,
+            'hp' => $request->hpPegawai,
+            'gaji' => $request->gajiPegawai
         ]);
 
         return redirect('/pegawai/dataPegawai');
@@ -54,5 +58,18 @@ class PegawaiController extends Controller
     public function hapusPegawai($idPegawai){
         DB::table('data_pegawais')->where('id', $idPegawai)->delete();
         return redirect('/pegawai/dataPegawai');   
+    }
+
+    public function profilPegawai($idPegawai) {
+        $pegawai = DB::table('data_pegawais')->find($idPegawai);
+        return view('pegawai.detailPegawai')->with([
+            'idPegawai' => $pegawai->id,
+            'namaPegawai' => $pegawai->nama,
+            'jabatanPegawai' => $pegawai->jabatan,
+            'nipPegawai' => $pegawai->nip,
+            'alamatPegawai' => $pegawai->alamat,
+            'hpPegawai' => $pegawai->hp,
+            'gajiPegawai' => $pegawai->gaji
+        ]);
     }
 }

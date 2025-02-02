@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,3 +35,6 @@ Route::get('/pegawai/formPerbarui/{idPegawai}',[PegawaiController::class, 'formP
 Route::post('/pegawai/simpanPembaruan/{idPegawai}', [PegawaiController::class, 'simpanPembaruan']);
 Route::get('/pegawai/hapusPegawai/{idPegawai}', [PegawaiController::class, 'hapusPegawai']);
 Route::get('/pegawai/profilPegawai/{idPegawai}', [PegawaiController::class, 'profilPegawai']);
+
+//route autentikasi ( tanpda db )
+Route::get('/autentikasi', [LoginController::class, 'authPengguna']);

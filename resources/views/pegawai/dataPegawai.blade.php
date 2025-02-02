@@ -30,10 +30,9 @@
 
 <div class="card">
   <div class="card-header">
-    Selamat Datang
+    Selamat Datang!;
   </div>
   <div class="card-body">
-    <h5 class="card-title"> Nama Pengguna!</h5>
     <p class="card-text"><i>Di halaman ini anda bisa melakukan pengolahan data pegawai SMK Wikrama 1 Garut</i></p>
   </div>
 </div>

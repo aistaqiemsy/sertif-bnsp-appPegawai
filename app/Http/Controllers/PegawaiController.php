@@ -80,4 +80,11 @@ class PegawaiController extends Controller
     public function halamanLogin() {
         return view('auth.index');
     }
+
+    //method cek nip
+    public function nipCek(Request $request) {
+        // $cekNip = DB::table('data_pegawais')->find($request->nip);
+        $cekNip = DB::table('data_pegawais')->where('nip', $request->nip)->first();
+        return response()->json(['ada' => $cekNip ? true : false]);
+    }
 }

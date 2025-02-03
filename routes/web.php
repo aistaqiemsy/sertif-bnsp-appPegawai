@@ -37,3 +37,7 @@ Route::get('/autentikasi', [LoginController::class, 'authPengguna']);
 Route::get('/logout', function() {
     return view('landing');
 });
+
+
+//JQuery cek nip
+Route::get('/pegawai/nipCek', [PegawaiController::class, 'nipCek']);

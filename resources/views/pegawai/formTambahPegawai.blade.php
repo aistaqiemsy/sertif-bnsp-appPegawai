@@ -6,8 +6,13 @@
     <title>Data Pegawai</title>
     <link rel="stylesheet" href="../../asset/bootstrap.css">
     <script src="../../js/form-validasi.js"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
+
 <!-- kode JS untuk validasi atau konfirmasi -->
 <script src="../../javascript/js.js"></script>
 
@@ -63,13 +68,14 @@
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">NIP</label>
                         <input type="number" id="nipPegawai" name="nipPegawai" class="form-control" id="exampleFormControlInput1" placeholder="Nomor Induk Pegawai">
-                        <p id="error-message" style="color: gray; display: none;"><i>Maksimal 8 angka</i></p>
+                        <label id="error-message" style="color: gray; display: none;"><i>Minimal 5 angka</i></label>
+                         <label id="nipStatus"></label>
                     </div>
                 </div>
 
                 <div class="container-sm">
                     <p align = "center">
-                        <button type="submit" class="btn btn-success">
+                        <button id="btnTambahPegawai" type="submit" class="btn btn-success">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
                             <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                             <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/>

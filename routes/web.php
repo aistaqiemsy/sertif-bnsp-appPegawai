@@ -4,9 +4,13 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () { 
+Route::get('/landingPage', function () { // halaman utama akses web
     return view('landing');
 });
+
+Route::get('/', [PegawaiController::class, 'berandaAdmin']);
+
+// return view('pegawai.landingAdmin');
 
 Route::get('/tentang', function () {
     return view('tentang');

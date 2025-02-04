@@ -11,10 +11,22 @@ class LoginController extends Controller
         $namaPengguna = $request->pengguna;
         $sandi = $request->sandi;
 
+        $totalPegawai = DB::table('data_pegawais')->count();
+        $headOffice = DB::table('data_pegawais')->where('jabatan', 'Head Office')->count();
+        $viceOffice = DB::table('data_pegawais')->where('jabatan', 'Vice Office')->count();
+        $staff = DB::table('data_pegawais')->where('jabatan', 'Staff')->count();
+        $mentor = DB::table('data_pegawais')->where('jabatan', 'Mentor')->count();
+
         if ($namaPengguna == 'admin' and $sandi == 123 ) {
-            return view('pegawai.landingAdmin');
+            return view('pegawai.landingAdmin')->with([
+                'jumlahPegawai' => $totalPegawai,
+                'headOffice' => $headOffice,
+                'viceOffice' => $viceOffice,
+                'staff' => $staff,
+                'mentor' => $mentor
+            ]);
         } else {
-            return redirect()->back()->withErrors(['Autentikasi gagal! Masukan kredensi dengan benar...']);
+            return redirect()->back()->withErrors(['Autentikasi gagal! Masukan kredensial dengan benar...']);
         }
         
     }

@@ -9,7 +9,19 @@ use Illuminate\Http\Request;
 class PegawaiController extends Controller
 {
     public function berandaAdmin() {
-        return view('pegawai.landingAdmin');
+        $totalPegawai = DB::table('data_pegawais')->count();
+        $headOffice = DB::table('data_pegawais')->where('jabatan', 'Head Office')->count();
+        $viceOffice = DB::table('data_pegawais')->where('jabatan', 'Vice Office')->count();
+        $staff = DB::table('data_pegawais')->where('jabatan', 'Staff')->count();
+        $mentor = DB::table('data_pegawais')->where('jabatan', 'Mentor')->count();
+
+        return view('pegawai.landingAdmin', [
+            'jumlahPegawai' => $totalPegawai,
+            'headOffice' => $headOffice,
+            'viceOffice' => $viceOffice,
+            'staff' => $staff,
+            'mentor' => $mentor
+        ]);
     }
     public function formTambahPegawai() {
         return view('pegawai.formTambahPegawai');
@@ -87,4 +99,6 @@ class PegawaiController extends Controller
         $cekNip = DB::table('data_pegawais')->where('nip', $request->nip)->first();
         return response()->json(['ada' => $cekNip ? true : false]);
     }
+
+
 }
